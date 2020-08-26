@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "84a192359483e8f1a843679c7c58ce7c",
+    "revision": "00923acacddf1ceac6044a060d793da1",
     "url": "/wealth-management/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/wealth-management/static/css/2.6ae3693d.chunk.css"
   },
   {
-    "revision": "0c804bf70ea4bb39c518",
-    "url": "/wealth-management/static/css/main.f1af3629.chunk.css"
+    "revision": "1f64384e4d461e7e3530",
+    "url": "/wealth-management/static/css/main.9cd0bc4f.chunk.css"
   },
   {
     "revision": "eb3da2d05218920cbaa1",
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/wealth-management/static/js/2.15c1d899.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0c804bf70ea4bb39c518",
+    "revision": "1f64384e4d461e7e3530",
     "url": "/wealth-management/static/js/main.eb4c61ea.chunk.js"
   },
   {
