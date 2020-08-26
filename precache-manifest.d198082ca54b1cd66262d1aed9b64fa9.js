@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "929b5dee996c2030500f8cdd55f4e8fe",
+    "revision": "7c12c75ff12bf657091318d2beaaba7d",
     "url": "/wealth-management/index.html"
   },
   {
-    "revision": "c3995ad5f4c70a191a01",
-    "url": "/wealth-management/static/css/2.ed64c74d.chunk.css"
+    "revision": "bc86055785cbba390ff8",
+    "url": "/wealth-management/static/css/2.c90d5553.chunk.css"
   },
   {
-    "revision": "7221dd96a5b932b1e833",
-    "url": "/wealth-management/static/css/main.906fae29.chunk.css"
+    "revision": "e96884721a0893e1ce63",
+    "url": "/wealth-management/static/css/main.d9d891d4.chunk.css"
   },
   {
-    "revision": "c3995ad5f4c70a191a01",
-    "url": "/wealth-management/static/js/2.12045a43.chunk.js"
+    "revision": "bc86055785cbba390ff8",
+    "url": "/wealth-management/static/js/2.4b1264e4.chunk.js"
   },
   {
     "revision": "2409169cc9d488610c63e21c6ccf8ee2",
-    "url": "/wealth-management/static/js/2.12045a43.chunk.js.LICENSE.txt"
+    "url": "/wealth-management/static/js/2.4b1264e4.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7221dd96a5b932b1e833",
-    "url": "/wealth-management/static/js/main.d1354137.chunk.js"
+    "revision": "e96884721a0893e1ce63",
+    "url": "/wealth-management/static/js/main.f8b38d96.chunk.js"
   },
   {
     "revision": "2e4a82ac748f94c1c2dc",
@@ -76,11 +76,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/wealth-management/static/media/PortfolioBanner__diagram.419898ec.png"
   },
   {
-    "revision": "1568e45d38cd858636c33bcdc6f6e027",
-    "url": "/wealth-management/static/media/PresentationBanner__img.1568e45d.png"
+    "revision": "25b17efa063dde9d5205bc83ab485275",
+    "url": "/wealth-management/static/media/PresentationBanner__img.25b17efa.png"
   },
   {
     "revision": "9547568bcc491a89024d4d3acc0984d3",
     "url": "/wealth-management/static/media/PromoBanner__img.9547568b.png"
+  },
+  {
+    "revision": "6478b6af4b7d301d12af79e842d01e8e",
+    "url": "/wealth-management/static/media/slider__item--1.6478b6af.png"
   }
 ]);
