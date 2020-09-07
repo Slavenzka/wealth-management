@@ -1,0 +1,201 @@
+@import "variables";
+
+// font mixins
+@mixin h0($color: $colorFontLightTransparent) {
+  font-family: "FuturaPT", Arial, sans-serif;
+  font-size: 15rem;
+  font-weight: 900;
+  line-height: 19.2rem;
+  font-display: swap;
+  color: $color;
+  letter-spacing: -0.224rem;
+
+  @media (max-width: $adaptiveMax) {
+    font-size: 9.5rem;
+    line-height: 12.2rem;
+    letter-spacing: -0.136rem;
+  }
+}
+
+@mixin h1($color: $colorDark) {
+  font-family: "FuturaPT", Arial, sans-serif;
+  font-size: 7rem;
+  font-weight: 900;
+  line-height: 7rem;
+  font-display: swap;
+  color: $color;
+  letter-spacing: -0.01rem;
+
+  @media (max-width: $adaptiveMax) {
+    font-size: 4.8rem;
+    line-height: 5rem;
+    letter-spacing: -0.069rem;
+  }
+}
+
+@mixin h2($color: $colorLightest, $weight: 600) {
+  font-family: "FuturaPT", Arial, sans-serif;
+  font-size: 5rem;
+  font-weight: $weight;
+  line-height: 5rem;
+  font-display: swap;
+  color: $color;
+  letter-spacing: -0.071rem;
+
+  @media (max-width: $adaptiveMax) {
+    font-size: 2.7rem;
+    line-height: 3rem;
+    letter-spacing: -0.113rem;
+  }
+}
+
+@mixin h3($color: $colorLightest) {
+  font-family: "FuturaPT", Arial, sans-serif;
+  font-size: 4.3rem;
+  font-weight: 600;
+  line-height: 4.5rem;
+  font-display: swap;
+  color: $color;
+  letter-spacing: -0.061rem;
+
+  @media (max-width: $adaptiveMax) {
+    font-size: 2.3rem;
+    line-height: 2.4rem;
+    letter-spacing: -0.033rem;
+  }
+}
+
+@mixin h4($color: $colorDark) {
+  font-family: "FuturaPT", Arial, sans-serif;
+  font-size: 3.4rem;
+  font-weight: 500;
+  line-height: 4.2rem;
+  font-display: swap;
+  color: $color;
+  letter-spacing: -0.081rem;
+}
+
+@mixin fontRegular($color: $colorDark, $weight: 300, $adaptiveSmall: false) {
+  font-family: "FuturaPT", Arial, sans-serif;
+  font-size: 2.1rem;
+  font-weight: $weight;
+  line-height: 3.2rem;
+  font-display: swap;
+  color: $color;
+  letter-spacing: -0.05rem;
+
+  @media (max-width: $adaptiveMax) {
+    @if $adaptiveSmall {
+      font-size: 1.4rem;
+      line-height: 2rem;
+      letter-spacing: -0.043rem;
+    } @else {
+      font-size: 1.8rem;
+      line-height: 2.3rem;
+      letter-spacing: -0.036rem;
+    }
+  }
+}
+
+@mixin fontInput($color: $colorHighlight, $weight: 300) {
+  font-family: "FuturaPT", Arial, sans-serif;
+  font-size: 1.9rem;
+  font-weight: $weight;
+  line-height: 2.5rem;
+  font-display: swap;
+  color: $color;
+}
+
+@mixin fontValue($color: $colorDarkest, $weight: 300) {
+  font-family: "FuturaPT", Arial, sans-serif;
+  font-size: 1.8rem;
+  font-weight: $weight;
+  line-height: 2.6rem;
+  font-display: swap;
+  color: $color;
+  letter-spacing: -0.043rem;
+}
+
+@mixin fontNavigation($color: $colorDark, $weight: 500) {
+  font-family: "FuturaPT", Arial, sans-serif;
+  font-size: 1.6rem;
+  font-weight: $weight;
+  line-height: 2.1rem;
+  font-display: swap;
+  color: $color;
+
+  @media (max-width: $adaptiveMax) {
+    font-size: 1.8rem;
+  }
+}
+
+@mixin fontButtonLarge($color: $colorDark) {
+  font-family: "FuturaPT", Arial, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.1rem;
+  font-display: swap;
+  color: $color;
+}
+
+@mixin fontButton($color: $colorDark) {
+  font-family: "FuturaPT", Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2rem;
+  font-display: swap;
+  color: $color;
+}
+
+@mixin fontLabel($color: $colorLightest) {
+  font-family: "FuturaPT", Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 2.3rem;
+  font-display: swap;
+  color: $color;
+}
+
+@mixin fontSmall($color: $colorLightest) {
+  font-family: Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.4rem;
+  font-display: swap;
+  color: $color;
+}
+
+// reset mixins
+
+@mixin resetButton {
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+@mixin resetList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin resetFieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+// style mixins
+@mixin link {
+  transition-duration: $transitionDuration;
+
+  &:hover,
+  &:active {
+    color: $colorHighlight;
+  }
+}

@@ -1,0 +1,32 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.list {
+  @include resetList;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+  &:not(:first-child) {
+    margin-left: 1rem;
+  }
+}
+
+.link {
+  font-size: 0;
+
+  &:hover {
+    .icon {
+      fill: $colorHighlight;
+    }
+  }
+}
+
+.icon {
+  width: 3rem;
+  fill: $colorLightest;
+  transition-duration: $transitionDuration;
+}

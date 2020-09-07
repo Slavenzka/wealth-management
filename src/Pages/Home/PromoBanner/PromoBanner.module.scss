@@ -1,0 +1,141 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.section {
+  position: relative;
+  background-image: linear-gradient(145deg, transparent 57vw, $colorBgDarker 57vw);
+  background-position: 0 12.1rem;
+  background-repeat: no-repeat;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 18rem;
+    right: 3.4rem;
+    width: 45vw;
+    height: 100%;
+    background-image: url("../../../assets/images/PromoBanner__img.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 14.5vw;
+    right: 20vw;
+    width: 12rem;
+    height: 12rem;
+    background-color: $colorHighlight;
+    border-radius: 50%;
+    box-shadow: -11vw 0 0 -5rem $colorHighlight;
+  }
+
+  .container {
+    height: 100%;
+  }
+
+  .wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 11.7rem;
+    padding-right: 65rem;
+    height: 100%;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 37rem;
+      right: 40rem;
+      width: 20rem;
+      height: 20rem;
+      background-color: $colorHighlight;
+      border-radius: 50%;
+      opacity: 0.5;
+      z-index: -1;
+    }
+  }
+
+  .descriptor {
+    @include fontRegular;
+
+    margin-top: 2.2rem;
+
+    span {
+      @include fontRegular($colorDark, 400);
+    }
+  }
+
+  .buttonMore {
+    @include resetButton;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    width: 11rem;
+    height: 11.1rem;
+    background-color: $colorLightest;
+  }
+
+  .iconArrow {
+    width: 4.6rem;
+    fill: $colorHighlight;
+    transform-origin: center;
+    transform: rotate(-90deg);
+  }
+}
+
+@media (max-width: $adaptiveMax) {
+  .section {
+    background-position: 0 27.5rem;
+
+    &::before {
+      top: auto;
+      bottom: 2.5rem;
+      right: 0;
+      width: 60vw;
+      height: 16.5rem;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: auto;
+      bottom: 12rem;
+      right: calc(50% - 7rem);
+      width: 4.9rem;
+      height: 4.9rem;
+      background-color: $colorHighlight;
+      border-radius: 50%;
+      box-shadow: -4rem -1rem 0 -2.2rem $colorHighlight;
+    }
+
+    .wrapper {
+      padding-top: 4rem;
+      padding-right: 0;
+      padding-bottom: 18.7rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: auto;
+        bottom: 7rem;
+        right: calc(50%);
+        width: 6rem;
+        height: 6rem;
+        background-color: $colorHighlight;
+        border-radius: 50%;
+        opacity: 0.5;
+        z-index: -1;
+      }
+    }
+
+    .buttonMore {
+      display: none;
+    }
+  }
+}

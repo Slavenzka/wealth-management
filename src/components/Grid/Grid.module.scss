@@ -1,0 +1,14 @@
+@import "styles/variables";
+
+.container {
+  margin: 0 auto;
+  padding: 0 15rem;
+  max-width: 144rem;
+}
+
+@media (max-width: $adaptiveMax) {
+  .container {
+    padding: 0 1.5rem;
+    width: 32rem;
+  }
+}

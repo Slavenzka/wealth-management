@@ -1,0 +1,22 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.input {
+  @include fontInput;
+
+  margin: 0;
+  padding: 1.4rem 0;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid $colorFontLightTransparent;
+  transition-duration: $transitionDuration;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+.inputError {
+  border-bottom: 1px solid $colorBorderError;
+}

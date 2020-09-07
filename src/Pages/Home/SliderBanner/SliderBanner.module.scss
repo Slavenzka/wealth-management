@@ -1,0 +1,61 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.wrapper {
+  background-color: $colorLightest;
+}
+
+.content {
+  padding-top: 2rem;
+}
+
+.intro {
+  padding-left: 22rem;
+}
+
+.slogan {
+  @include h2($colorDark, 900);
+
+  margin: 0;
+}
+
+.descriptor {
+  @include fontRegular($colorDark, 500);
+
+  position: relative;
+  margin: 4.5rem 0 0 0;
+  padding: 1.1rem 20% 1.4rem 2rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.2rem;
+    height: 100%;
+    background-color: $colorHighlight2;
+  }
+}
+
+@media (max-width: $adaptiveMax) {
+  .wrapper {
+    padding-top: 4rem;
+  }
+
+  .content {
+    padding-top: 3.3rem;
+  }
+
+  .intro {
+    padding-left: 0;
+  }
+
+  .slogan {
+    text-align: center;
+  }
+
+  .descriptor {
+    margin: 2.6rem 0 0 0;
+    padding: 0 0 0 1.5rem;
+  }
+}

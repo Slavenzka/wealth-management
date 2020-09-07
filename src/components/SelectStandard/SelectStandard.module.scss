@@ -1,0 +1,109 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.select {
+  width: max-content;
+
+  :global {
+    .select {
+      &__control {
+        min-height: 1.6rem;
+        border: none;
+        cursor: pointer;
+      }
+
+      &__value-container {
+        min-width: 3rem;
+        min-height: 1.6rem;
+        padding: 0;
+      }
+
+      &__placeholder {
+        //@include fontSpecialMedium($colorFontLightest);
+        //
+        //opacity: 0.5;
+      }
+
+      &__single-value {
+        @include fontNavigation;
+      }
+
+      &__indicator-separator {
+        display: none;
+      }
+
+      &__dropdown-indicator {
+        padding: 0;
+        transform-origin: center;
+
+        svg {
+          width: 2rem;
+          height: 2rem;
+          fill: $colorDark;
+        }
+      }
+
+      &__option {
+        @include fontNavigation;
+
+        padding: 0.5rem 0.2rem 0.5rem 0.2rem;
+
+        &:hover,
+        &--is-focused {
+          background-color: $colorDarker;
+        }
+
+        &--is-selected {
+          background-color: $colorFontLightTransparent;
+          pointer-events: none;
+        }
+
+        &:not(.select__option--is-selected) {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.selectHeader {
+  .select {
+    :global {
+      .select {
+        &__value-container {
+          padding: 0 2.2rem 0 0.5rem;
+          min-width: auto;
+        }
+
+        &__single-value {
+          @include fontNavigation;
+
+          text-transform: uppercase;
+        }
+
+        &__dropdown-indicator {
+          svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            fill: $colorDark;
+          }
+        }
+
+        &__option {
+          @include fontNavigation;
+
+          &:hover,
+          &--is-focused {
+            color: $colorFontLightTransparent;
+            background-color: $colorDark;
+          }
+        }
+      }
+    }
+  }
+}

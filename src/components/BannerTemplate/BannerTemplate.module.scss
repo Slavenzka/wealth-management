@@ -1,0 +1,113 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.wrapper {
+  position: relative;
+  padding-top: 9rem;
+}
+
+.list {
+  @include resetList;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: -3rem;
+}
+
+.item {
+  position: relative;
+
+  &:not(.itemActive) {
+    height: 1.4rem;
+    width: 1.7rem;
+    font-size: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1.7rem;
+      height: 0.2rem;
+      background-color: $colorSlideMark;
+    }
+  }
+
+  &.itemActive {
+    @include fontNavigation($colorFontDarkTransparent, 300);
+
+    padding-left: 3.1rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 1.2rem;
+      left: -25vw;
+      width: calc(25vw + 1.7rem);
+      height: 0.1rem;
+      background-color: $colorFontDarkTransparent;
+    }
+  }
+
+  .label {
+    @include fontNavigation($colorFontDarkTransparent, 300);
+    grid-column: 2 / 3;
+    margin: 0;
+  }
+}
+
+.item:not(.itemActive) + .itemActive {
+  margin-top: -1.2rem;
+}
+
+.itemActive:not(:last-child) {
+  margin-bottom: 0.3rem;
+}
+
+.wrapperLight {
+  .item {
+    &.itemActive {
+      &::before {
+        background-color: $colorFontLightTransparent;
+      }
+    }
+
+    .label {
+      color: $colorFontLightTransparent;
+    }
+  }
+}
+
+@media (max-width: $adaptiveMax) {
+  .wrapper {
+    padding-top: 2.7rem;
+  }
+
+  .list {
+    margin-left: 0;
+  }
+
+  .item {
+    &:not(.itemActive) {
+      display: none;
+    }
+
+    &.itemActive {
+      padding-left: 2rem;
+
+      &::before {
+        top: 0.8rem;
+        left: -50vw;
+        width: calc(50vw + 1.5rem);
+        height: 1px;
+      }
+    }
+
+    .label {
+      font-size: 1.2rem;
+      font-weight: 300;
+      line-height: 1.6rem;
+    }
+  }
+}

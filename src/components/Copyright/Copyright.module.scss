@@ -1,0 +1,15 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.copyright {
+  @include fontSmall(rgba(255, 255, 255, 0.25));
+
+  margin: 3.3rem 0 0 0;
+}
+
+.link {
+  @include fontSmall($colorFontLightTransparent);
+  @include link;
+
+  text-decoration: underline;
+}

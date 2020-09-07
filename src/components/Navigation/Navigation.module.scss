@@ -1,0 +1,50 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.list {
+  @include resetList;
+
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  width: max-content;
+
+  &:not(:first-child) {
+    margin-left: 5rem;
+  }
+}
+
+.link {
+  @include fontNavigation;
+  @include link;
+}
+
+.linkActive {
+  color: $colorHighlight;
+  text-decoration: underline;
+}
+
+@media (max-width: $adaptiveMax) {
+  .list {
+    flex-direction: column;
+
+    .item {
+      &:not(:first-child) {
+        margin-top: 3rem;
+        margin-left: 0;
+      }
+    }
+
+    .link {
+      color: $colorLightest;
+    }
+
+    .linkActive {
+      color: $colorLightest;
+      text-decoration: none;
+      opacity: 0.5;
+    }
+  }
+}

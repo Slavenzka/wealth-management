@@ -1,0 +1,197 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+@keyframes showMenu {
+  0% {
+    top: -100%;
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes closeMenu {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    top: -100%;
+    opacity: 0;
+  }
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: $colorDarker;
+  border-bottom: 0.1rem solid $colorBorderMain;
+  width: 100%;
+  z-index: 3;
+  transition-property: transform;
+  transform: translateY(0);
+  transition-duration: $transitionDuration;
+
+  .social {
+    display: none;
+  }
+}
+
+.headerHiddenAbsolute {
+  position: absolute;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  transform: translateY(-100%);
+}
+
+.headerHiddenFixed {
+  position: fixed;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  transform: translateY(-100%);
+  background-color: $colorLightest;
+}
+
+.headerFixed {
+  position: fixed;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  transform: translateY(0);
+  background-color: $colorLightest;
+}
+
+.wrapper,
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation {
+  margin-left: auto;
+}
+
+.button {
+  margin-left: 4rem;
+  width: 20.6rem
+}
+
+.buttonBurger,
+.containerAdaptive,
+.menuTopAdaptive,
+.copyright {
+  display: none;
+}
+
+@media (max-width: $adaptiveMax) {
+  .header {
+    position: fixed;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    transform: none;
+
+    .social {
+      display: flex;
+      margin-top: 5.6rem;
+    }
+  }
+
+  .menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 3rem;
+    width: 100%;
+    min-height: 100vh;
+    background-color: $colorHighlight;
+    opacity: 0;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+
+    .copyright {
+      display: block;
+      margin: 3rem 0 0 0;
+      padding: 0 4rem;
+      text-align: center;
+    }
+  }
+
+  .menuVisible {
+    animation-name: showMenu;
+    pointer-events: all;
+  }
+
+  .menuHidden {
+    pointer-events: none;
+    animation-name: closeMenu;
+  }
+
+  .containerAdaptive {
+    display: block;
+  }
+
+  .menuTopAdaptive {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0;
+  }
+
+  .logoShort {
+    width: 4.2rem;
+    fill: $colorLightest;
+    opacity: 0.5;
+  }
+
+  .buttonClose {
+    @include resetButton;
+
+    margin-right: calc(-1.5rem / 2);
+    width: 3rem;
+    height: 3rem;
+
+    .iconClose {
+      width: 1.5rem;
+      fill: $colorLightest;
+    }
+  }
+
+  .navigation {
+    margin-left: 0;
+    padding-top: 4.9rem;
+  }
+
+  .buttonBurger {
+    @include resetButton;
+
+    display: block;
+    margin-right: calc(-1.5rem / 2);
+    width: 3rem;
+    height: 3rem;
+
+    .icon {
+      width: 1.5rem;
+      fill: $colorHighlight;
+    }
+  }
+
+  .button {
+    margin-left: 0;
+    margin-top: 3rem;
+  }
+}

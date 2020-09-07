@@ -1,0 +1,69 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.wrapper {
+  position: relative;
+
+  :global {
+    .swiper-wrapper {
+      @include resetList;
+    }
+
+    .swiper-container {
+      padding-top: 16rem;
+    }
+  }
+}
+
+.button {
+  position: absolute;
+  top: 4.9rem;
+  background-color: $colorBgButton;
+  transition-duration: $transitionDuration;
+  z-index: 1;
+
+  &.buttonPrev {
+    left: calc(50% + 12.8rem);
+    transform: rotate(90deg);
+  }
+
+  &.buttonNext {
+    left: calc(50% + 12.8rem + 11rem);
+    border-top: 1px solid $colorBorderMain;
+    transform: rotate(-90deg);
+  }
+}
+
+.buttonDisabled {
+  opacity: 0.3;
+
+  svg {
+    fill: $colorDarkest;
+  }
+}
+
+@media (max-width: $adaptiveMax) {
+  .wrapper {
+    :global {
+      .swiper-container {
+        padding-top: 9.2rem;
+      }
+    }
+  }
+
+  .button {
+    top: 34.7rem;
+
+    &.buttonPrev {
+      left: calc(50% + 7.6rem);
+      transform: rotate(90deg);
+    }
+
+    &.buttonNext {
+      top: calc(34.7rem + 8.5rem);
+      left: calc(50% + 7.6rem);
+      border-top: 1px solid $colorBorderMain;
+      transform: rotate(-90deg);
+    }
+  }
+}

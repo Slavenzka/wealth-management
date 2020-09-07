@@ -1,0 +1,139 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.content {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 58.8rem;
+  grid-column-gap: 5.3rem;
+  padding-top: 2.1rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 10.4rem;
+    left: 10.7rem;
+    width: 29.1rem;
+    height: 34.1rem;
+    background-image: url("../../../assets/images/PresentationBanner__img.png");
+    background-size: cover;
+  }
+}
+
+.slogan {
+  @include h2($colorDark);
+
+  margin: 0;
+  text-align: right;
+}
+
+.descriptor {
+  @include fontValue($colorDarkest, 300);
+
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  margin: 0;
+  padding-right: 18%;
+}
+
+.partners {
+  @include h4;
+
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  margin: 0;
+  padding-top: 2rem;
+}
+
+.linkDownload {
+  @include fontRegular($colorDark, 500);
+
+  position: relative;
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+  display: flex;
+  align-items: center;
+  margin-top: 15rem;
+  background-color: $colorBgButton;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 50vw;
+    height: 100%;
+    background-color: $colorBgButton;
+  }
+}
+
+.buttonDisabled {
+  margin-right: 5rem;
+}
+
+@media (max-width: $adaptiveMax) {
+  .wrapper {
+    padding-top: 15rem;
+  }
+
+  .content {
+    display: block;
+    padding-top: 1.8rem;
+
+    &::before {
+      bottom: calc(5.1rem + 8.6rem);
+      left: 2.8rem;
+      width: 23.5rem;
+      height: 27.5rem;
+    }
+  }
+
+  .slogan {
+    padding-left: 10%;
+  }
+
+  .descriptor {
+    margin-top: 2.1rem;
+    padding-right: 0;
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 2rem;
+    text-align: right;
+  }
+
+  .partners {
+    @include fontRegular($colorDark, 500);
+
+    margin: 2.3rem 0 0 0;
+    padding-top: 0;
+    text-align: right;
+  }
+
+  .linkDownload {
+    display: flex;
+    margin-top: 35.5rem;
+    margin-left: -1.5rem;
+    font-size: 1.7rem;
+    letter-spacing: 0.04rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 50vw;
+      height: 100%;
+      background-color: $colorBgButton;
+    }
+  }
+
+  .buttonDisabled {
+    margin-right: 1.9rem;
+    width: 8.5rem;
+    height: 8.6rem;
+
+    svg {
+      width: 3.2rem;
+    }
+  }
+}
